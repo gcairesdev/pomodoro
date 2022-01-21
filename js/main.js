@@ -1,9 +1,9 @@
-
-let interval;
-let timerInSeconds = 25 * 60;
-
 const displayTimer = $('#timer');
 const controlBtn = $('#controlButton');
+
+let interval;
+
+let timerInSeconds = minutesToSeconds(25);
 
 controlBtn.addEventListener('click', function() {
     timerIsRunning() ? stopTimer() : startTimer();
@@ -24,7 +24,7 @@ const startTimer = () => {
 const stopTimer = () => clearInterval(interval);
 
 const formatTimer = () => {
-    const minutes = Math.floor(timerInSeconds/60);
+    const minutes = secondsToMinutes(timerInSeconds);
     const seconds = timerInSeconds % 60;
 
     const minutesZeroLeft = String(minutes).padStart(2, '0')
