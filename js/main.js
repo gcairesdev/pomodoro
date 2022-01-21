@@ -5,7 +5,7 @@ let interval;
 
 let timerInSeconds = minutesToSeconds(25);
 
-controlBtn.addEventListener('click', function() {
+controlBtn.addEventListener('click', function () {
     timerIsRunning() ? stopTimer() : startTimer();
     changeButtonText();
 });
@@ -18,6 +18,7 @@ const startTimer = () => {
     interval = setInterval(() => {
         timerInSeconds--;
         updateDisplayTimer(formatTimer());
+        if (timerInSeconds === 0) stopTimer();
     }, 1000);
 }
 
@@ -30,7 +31,7 @@ const formatTimer = () => {
     const minutesZeroLeft = String(minutes).padStart(2, '0')
     const secondsZeroLeft = String(seconds).padStart(2, '0')
 
-    return `${minutesZeroLeft}:${secondsZeroLeft}`; 
+    return `${minutesZeroLeft}:${secondsZeroLeft}`;
 }
 
 const updateDisplayTimer = value => displayTimer.innerText = value;
