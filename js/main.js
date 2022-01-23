@@ -14,6 +14,7 @@ const startTimer = () => {
     interval = setInterval(() => {
         timerInSeconds--;
         updateDisplayTimer(formatTimer());
+        changePageTitle(formatTimer());
         if (timerInSeconds === 0) resetTimer();
     }, 1000);
     changeButtonText();
@@ -55,6 +56,7 @@ const resetTimer = () => {
     } else {
         pomodoro.click();
     }
+    changePageTitle('Pomodoro');
 }
 
 const getActiveTab = () => $('.active').innerText;
