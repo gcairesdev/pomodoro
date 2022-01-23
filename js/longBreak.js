@@ -6,8 +6,8 @@ longBreak.onclick = () => {
     timerIsRunning() && stopTimer();
     
     setActiveTab(longBreak);
-    changePageColor(longBreakColor);
-    changePageTitle('Long Break');
+    setPageColor(longBreakColor);
+    setPageTitle('Long Break');
 
     timeInMinutes = longBreakMinutes;
     timerInSeconds = minutesToSeconds(timeInMinutes);

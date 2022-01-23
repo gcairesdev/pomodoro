@@ -6,8 +6,8 @@ shortBreak.onclick = () => {
     timerIsRunning() && stopTimer();
     
     setActiveTab(shortBreak);
-    changePageColor(shortBreakColor);
-    changePageTitle('Short Break');
+    setPageColor(shortBreakColor);
+    setPageTitle('Short Break');
     
     timeInMinutes = shortBreakMinutes;
     timerInSeconds = minutesToSeconds(timeInMinutes);

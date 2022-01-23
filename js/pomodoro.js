@@ -6,8 +6,8 @@ pomodoro.onclick = () => {
     timerIsRunning() && stopTimer();
 
     setActiveTab(pomodoro);
-    changePageColor(pomodoroColor);
-    changePageTitle('Pomodoro');
+    setPageColor(pomodoroColor);
+    setPageTitle('Pomodoro');
 
     timeInMinutes = pomodoroMinutes;
     timerInSeconds = minutesToSeconds(timeInMinutes);
