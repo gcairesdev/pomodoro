@@ -6,8 +6,6 @@ let pomodoros = 0;
 
 controlBtn.addEventListener('click', () => timerIsRunning() ? stopTimer() : startTimer());
 
-const changeButtonText = text => controlBtn.value = text;
-
 const timerIsRunning = () => controlBtn.value === 'STOP';
 
 const startTimer = () => {
@@ -17,12 +15,12 @@ const startTimer = () => {
         setPageTitle(formatTimer());
         if (timerInSeconds === 0) resetTimer();
     }, 1000);
-    changeButtonText('STOP');
+    setButtonText('STOP');
 }
 
 const stopTimer = () => {
     clearInterval(interval);
-    changeButtonText('START');
+    setButtonText('START');
 }
 
 const formatTimer = () => {
