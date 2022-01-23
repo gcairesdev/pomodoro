@@ -39,11 +39,13 @@ const resetTimer = () => {
     stopTimer();
     timerInSeconds = minutesToSeconds(timeInMinutes);
     updateDisplayTimer(formatTimer());
+
     if (getActiveTab() === 'Pomodoro') {
         pomodoros++;
-        pomodoros % 4 === 0 ? longBreak.click() : shortBreak.click();
+        pomodoros % 4 === 0 ? getTab('Long Break').click() : getTab('Short Break').click();
     } else {
-        pomodoro.click();
+        getTab('Pomodoro').click();
     }
+
     setPageTitle(getActiveTab());
 }

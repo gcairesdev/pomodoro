@@ -13,6 +13,14 @@ const setActiveTab = tab => {
     tab.classList.add('active');
 }
 
+const getTab = name => {
+    let tab;
+    tabs.forEach(([tabName, element]) => {
+        if (name == tabName) tab = element;
+    });
+    return tab;
+};
+
 const onClickTabs = () => {
     tabs.forEach(([name, tab, color, time]) => {
         tab.onclick = () => {
