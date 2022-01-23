@@ -1,10 +1,5 @@
 const displayTimer = $('#timer');
 const controlBtn = $('#controlButton');
-const pomodoroTab = $('#pomodoroTab');
-
-const pomodoroMinutes = 25;
-let timeInMinutes = pomodoroMinutes;
-let timerInSeconds = minutesToSeconds(timeInMinutes);
 
 let interval;
 
@@ -40,16 +35,14 @@ const formatTimer = () => {
 
 const updateDisplayTimer = value => displayTimer.innerText = value;
 
-const activePomodoroTab = () => {
+const setActiveTab = (tab, color, minutes) => {
     clearActiveTab();
-    changePageColor('#d95550');
-    pomodoroTab.classList.add('active');
-    timeInMinutes = pomodoroMinutes;
+    changePageColor(color);
+    tab.classList.add('active');
+    timeInMinutes = minutes;
     timerInSeconds = minutesToSeconds(timeInMinutes);
     updateDisplayTimer(formatTimer(timerInSeconds));
 }
-
-pomodoroTab.addEventListener('click', activePomodoroTab);
 
 const resetTimer = () => {
     stopTimer();
