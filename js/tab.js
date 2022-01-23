@@ -27,6 +27,7 @@ const onClickTabs = () => {
             timerInSeconds = minutesToSeconds(timeInMinutes);
             updateDisplayTimer(formatTimer(timerInSeconds));
         };
+        name == 'Pomodoro' && tab.click();
     });
 }
 
