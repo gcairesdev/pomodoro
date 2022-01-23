@@ -37,17 +37,6 @@ const formatTimer = () => {
 
 const updateDisplayTimer = value => displayTimer.innerText = value;
 
-const setActiveTab = (tab, color, minutes) => {
-    stopTimer();
-    clearActiveTab();
-    changePageColor(color);
-    tab.classList.add('active');
-    timeInMinutes = minutes;
-    timerInSeconds = minutesToSeconds(timeInMinutes);
-    updateDisplayTimer(formatTimer(timerInSeconds));
-    changePageTitle(tab.innerText);
-}
-
 const resetTimer = () => {
     stopTimer();
     timerInSeconds = minutesToSeconds(timeInMinutes);
@@ -60,5 +49,3 @@ const resetTimer = () => {
     }
     changePageTitle(getActiveTab());
 }
-
-const getActiveTab = () => $('.active').innerText;
