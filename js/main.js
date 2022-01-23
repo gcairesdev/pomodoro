@@ -1,8 +1,6 @@
-const displayTimer = $('#timer');
-const controlBtn = $('#controlButton');
+let interval, pomodoros = 0;
 
-let interval;
-let pomodoros = 0;
+const displayTimer = $('#timer'), controlBtn = $('#controlButton');
 
 controlBtn.addEventListener('click', () => timerIsRunning() ? stopTimer() : startTimer());
 
