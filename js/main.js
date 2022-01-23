@@ -6,7 +6,7 @@ let pomodoros = 0;
 
 controlBtn.addEventListener('click', () => timerIsRunning() ? stopTimer() : startTimer());
 
-const changeButtonText = () => controlBtn.value = controlBtn.value === 'START' ? 'STOP' : 'START';
+const changeButtonText = text => controlBtn.value = text;
 
 const timerIsRunning = () => controlBtn.value === 'STOP';
 
@@ -17,12 +17,12 @@ const startTimer = () => {
         changePageTitle(formatTimer());
         if (timerInSeconds === 0) resetTimer();
     }, 1000);
-    changeButtonText();
+    changeButtonText('STOP');
 }
 
 const stopTimer = () => {
     clearInterval(interval);
-    changeButtonText();
+    changeButtonText('START');
 }
 
 const formatTimer = () => {
@@ -38,6 +38,7 @@ const formatTimer = () => {
 const updateDisplayTimer = value => displayTimer.innerText = value;
 
 const setActiveTab = (tab, color, minutes) => {
+    stopTimer();
     clearActiveTab();
     changePageColor(color);
     tab.classList.add('active');
