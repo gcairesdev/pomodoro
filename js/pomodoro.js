@@ -6,6 +6,7 @@ pomodoro.onclick = () => {
     timerIsRunning() && stopTimer();
 
     setActiveTab(pomodoro);
+    setButtonColor(pomodoroColor);
     setPageColor(pomodoroColor);
     setPageTitle('Pomodoro');
 

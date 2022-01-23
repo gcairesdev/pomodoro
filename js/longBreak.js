@@ -6,6 +6,7 @@ longBreak.onclick = () => {
     timerIsRunning() && stopTimer();
     
     setActiveTab(longBreak);
+    setButtonColor(longBreakColor);
     setPageColor(longBreakColor);
     setPageTitle('Long Break');
 

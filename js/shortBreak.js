@@ -6,6 +6,7 @@ shortBreak.onclick = () => {
     timerIsRunning() && stopTimer();
     
     setActiveTab(shortBreak);
+    setButtonColor(shortBreakColor);
     setPageColor(shortBreakColor);
     setPageTitle('Short Break');
     
