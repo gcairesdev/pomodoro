@@ -2,9 +2,11 @@ const displayTimer = $('#timer');
 const controlBtn = $('#controlButton');
 const pomodoroTab = $('#pomodoroTab');
 
-let interval;
+const pomodoroMinutes = 25;
+let timeInMinutes = pomodoroMinutes;
+let timerInSeconds = minutesToSeconds(timeInMinutes);
 
-let timerInSeconds = minutesToSeconds(25);
+let interval;
 
 controlBtn.addEventListener('click', () => timerIsRunning() ? stopTimer() : startTimer());
 
@@ -16,7 +18,7 @@ const startTimer = () => {
     interval = setInterval(() => {
         timerInSeconds--;
         updateDisplayTimer(formatTimer());
-        if (timerInSeconds === 0) stopTimer();
+        if (timerInSeconds === 0) resetTimer();
     }, 1000);
     changeButtonText();
 }
@@ -42,8 +44,15 @@ const activePomodoroTab = () => {
     clearActiveTab();
     changePageColor('#d95550');
     pomodoroTab.classList.add('active');
-    timerInSeconds = minutesToSeconds(25);
+    timeInMinutes = pomodoroMinutes;
+    timerInSeconds = minutesToSeconds(timeInMinutes);
     updateDisplayTimer(formatTimer(timerInSeconds));
 }
 
 pomodoroTab.addEventListener('click', activePomodoroTab);
+
+const resetTimer = () => {
+    stopTimer();
+    timerInSeconds = minutesToSeconds(timeInMinutes);
+    updateDisplayTimer(formatTimer());
+}
