@@ -41,6 +41,8 @@ const activePomodoroTab = () => {
     clearActiveTab();
     changePageColor('#d95550');
     pomodoroTab.classList.add('active');
+    timerInSeconds = minutesToSeconds(25);
+    updateDisplayTimer(formatTimer(timerInSeconds));
 }
 
 pomodoroTab.addEventListener('click', activePomodoroTab);
