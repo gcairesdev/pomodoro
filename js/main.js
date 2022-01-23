@@ -6,10 +6,7 @@ let interval;
 
 let timerInSeconds = minutesToSeconds(25);
 
-controlBtn.addEventListener('click', function () {
-    timerIsRunning() ? stopTimer() : startTimer();
-    changeButtonText();
-});
+controlBtn.addEventListener('click', () => timerIsRunning() ? stopTimer() : startTimer());
 
 const changeButtonText = () => controlBtn.value = controlBtn.value === 'START' ? 'STOP' : 'START';
 
@@ -21,9 +18,13 @@ const startTimer = () => {
         updateDisplayTimer(formatTimer());
         if (timerInSeconds === 0) stopTimer();
     }, 1000);
+    changeButtonText();
 }
 
-const stopTimer = () => clearInterval(interval);
+const stopTimer = () => {
+    clearInterval(interval);
+    changeButtonText();
+}
 
 const formatTimer = () => {
     const minutes = secondsToMinutes(timerInSeconds);
