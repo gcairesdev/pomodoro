@@ -44,6 +44,7 @@ const setActiveTab = (tab, color, minutes) => {
     timeInMinutes = minutes;
     timerInSeconds = minutesToSeconds(timeInMinutes);
     updateDisplayTimer(formatTimer(timerInSeconds));
+    changePageTitle(tab.innerText);
 }
 
 const resetTimer = () => {
@@ -56,7 +57,7 @@ const resetTimer = () => {
     } else {
         pomodoro.click();
     }
-    changePageTitle('Pomodoro');
+    changePageTitle(getActiveTab());
 }
 
 const getActiveTab = () => $('.active').innerText;
