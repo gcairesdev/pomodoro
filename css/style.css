@@ -27,6 +27,9 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+body {
     background-color: #d95550;
 }
 
@@ -57,7 +60,7 @@ li {
     padding: 5px 10px;
 }
 
-li#active {
+li.active {
     border-radius: 5px;
     font-weight: bolder;
     background-color: #00000025;

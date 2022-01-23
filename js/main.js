@@ -1,5 +1,6 @@
 const displayTimer = $('#timer');
 const controlBtn = $('#controlButton');
+const pomodoroTab = $('#pomodoroTab');
 
 let interval;
 
@@ -35,3 +36,10 @@ const formatTimer = () => {
 }
 
 const updateDisplayTimer = value => displayTimer.innerText = value;
+
+const activePomodoroTab = () => {
+    clearActiveTab();
+    pomodoroTab.classList.add('active');
+}
+
+pomodoroTab.addEventListener('click', activePomodoroTab);
