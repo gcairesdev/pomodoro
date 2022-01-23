@@ -39,6 +39,7 @@ const updateDisplayTimer = value => displayTimer.innerText = value;
 
 const activePomodoroTab = () => {
     clearActiveTab();
+    changePageColor('#d95550');
     pomodoroTab.classList.add('active');
 }
 
