@@ -2,6 +2,7 @@ const displayTimer = $('#timer');
 const controlBtn = $('#controlButton');
 
 let interval;
+let pomodoros = 0;
 
 controlBtn.addEventListener('click', () => timerIsRunning() ? stopTimer() : startTimer());
 
@@ -48,4 +49,12 @@ const resetTimer = () => {
     stopTimer();
     timerInSeconds = minutesToSeconds(timeInMinutes);
     updateDisplayTimer(formatTimer());
+    if (getActiveTab() === 'Pomodoro') {
+        pomodoros++;
+        pomodoros % 4 === 0 ? longBreak.click() : shortBreak.click();
+    } else {
+        pomodoro.click();
+    }
 }
+
+const getActiveTab = () => $('.active').innerText;
