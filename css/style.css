@@ -30,6 +30,7 @@ html, body {
 }
 
 body {
+    transition: 1s;
     background-color: #d95550;
 }
 
@@ -76,6 +77,7 @@ li.active {
 #controlButton {
     border: 0;
     width: 200px;
+    transition: 1s;
     cursor: pointer;
     font-size: 16pt;
     margin-top: 20px;
