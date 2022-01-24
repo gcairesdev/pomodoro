@@ -15,7 +15,7 @@ const setActiveTab = tab => {
 
 const getTab = name => {
     let tab;
-    tabs.forEach(([tabName, element]) => {
+    tabs.forEach(([tabName, favicon, element]) => {
         if (name == tabName) tab = element;
     });
     return tab;
