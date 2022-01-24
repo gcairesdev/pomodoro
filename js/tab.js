@@ -1,7 +1,7 @@
 const tabs = [
-    ['Pomodoro', $('#pomodoroTab'), '#d95550', 25],
-    ['Short Break', $('#shortBreakTab'), '#5092d9', 5],
-    ['Long Break', $('#longBreakTab'), '#375192', 15],
+    ['Pomodoro', 'favicon', $('#pomodoroTab'), '#d95550', 25],
+    ['Short Break', 'favicon-short-break', $('#shortBreakTab'), '#5092d9', 5],
+    ['Long Break', 'favicon-long-break', $('#longBreakTab'), '#375192', 15],
 ];
 
 const clearActiveTab = () => $('.active').classList.remove('active');
@@ -22,7 +22,7 @@ const getTab = name => {
 };
 
 const onClickTabs = () => {
-    tabs.forEach(([name, tab, color, time]) => {
+    tabs.forEach(([name, favicon, tab, color, time]) => {
         tab.onclick = () => {
             timerIsRunning() && stopTimer();
 
@@ -30,6 +30,7 @@ const onClickTabs = () => {
             setButtonColor(color);
             setPageColor(color);
             setPageTitle(name);
+            setPageFavicon(favicon);
 
             timeInMinutes = time;
             timerInSeconds = minutesToSeconds(timeInMinutes);
