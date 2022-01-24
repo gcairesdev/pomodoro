@@ -10,7 +10,7 @@ const startTimer = () => {
     interval = setInterval(() => {
         timerInSeconds--;
         updateDisplayTimer(formatTimer());
-        setPageTitle(formatTimer());
+        setPageTitle(`${formatTimer()} - ${getActiveTab()}`);
         if (timerInSeconds === 0) resetTimer();
     }, 1000);
     setButtonText('STOP');
