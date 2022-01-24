@@ -19,6 +19,7 @@ const startTimer = () => {
 const stopTimer = () => {
     clearInterval(interval);
     setButtonText('START');
+    setPageFavicon('favicon-pause');
 }
 
 const formatTimer = () => {
