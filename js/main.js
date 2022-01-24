@@ -46,4 +46,5 @@ const resetTimer = () => {
     }
 
     setPageTitle(getActiveTab());
+    playAudio('alarm-kitchen.mp3');
 }
