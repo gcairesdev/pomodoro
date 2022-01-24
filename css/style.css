@@ -85,3 +85,10 @@ li.active {
     padding: 15.5px 50px;
     box-shadow: rgb(214, 214, 214) 0px 6px 0px;
 }
+
+#controlButton:active {
+    top: 2px;
+    height: 53px;
+    position: relative;
+    box-shadow: #efefef 0px 6px 0px;
+}
