@@ -14,12 +14,14 @@ const startTimer = () => {
         if (timerInSeconds === 0) resetTimer();
     }, 1000);
     setButtonText('STOP');
+    playAudio('button-press.wav');
 }
 
 const stopTimer = () => {
     clearInterval(interval);
     setButtonText('START');
     setPageFavicon('favicon-pause');
+    playAudio('button-press.wav');
 }
 
 const formatTimer = () => {
